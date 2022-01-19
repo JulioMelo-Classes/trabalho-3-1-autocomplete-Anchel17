@@ -8,8 +8,8 @@ using namespace std;
 
 Database::Database(string arquivo){
     ifstream arq;
-    string l_string;                        //<!Variável para pegar a quantidade de termos 
-    string l_str2;                          //<!Variável para pegar a "segunta parte" da string
+    string l_string;                        //<!Variável para pegar os termos 
+    string l_str2;                          //<!Variável para guardar a segunda metade da string
 
     arq.open(arquivo, ios::in);
 
@@ -31,7 +31,8 @@ Database::Database(string arquivo){
             l_str2 = data_dadosBrutos[i].substr(pos);
             data_dados.push_back({stoul(data_dadosBrutos[i]), l_str2});
         }
-        /*só para verificar se armazenou corretamente
+        
+        /*só para verificar se está armazenando corretamente
         for(auto it : data_dados){
             cout<<it.first<<" ";
             cout<<it.second<<endl;
@@ -43,6 +44,7 @@ Database::Database(string arquivo){
         NA CLASSE INTERFACE
         */
         cout<<"Erro! Verifique se digitou corretamente o destino do arquivo para leitura"<<endl;
+
         exit(0);
     }
 }
