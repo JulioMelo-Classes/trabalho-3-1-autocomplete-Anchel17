@@ -1,29 +1,12 @@
-#ifndef INTERFACE_HPP
-#define INTERFACE_HPP
+#include <string>
+#include "../include/process.hpp"
 
-/**
- * Classe responsável pela interação com o usuário
- * Vai imprimir as mensagens, receber a entrada e 
- * imprimir a saída
- */
-class Interface{
-    private:
+using namespace std;
 
-        std::string interf_entrada;                  //<!Entrada recebida do usuário
+void Process::achouArmazena(unsigned int &ocorr, string &termo){
+    this -> proc_result.push_back({ocorr, termo});
+}
 
-        //Process exit;                             //<!Objeto para chamar o vector de termos possíveis
-
-    public:
-        /**
-        *   Método para receber a entrada
-        */
-        void recebeEntrada();
-
-        /**
-        *   Método para retornar a entrada
-        *   @return string contendo a entrada digitada
-        */
-        std::string getEntrada();
-};
-
-#endif
+void Process::busca(vector<pair<unsigned int, string>> dados, string termo){
+    //Algoritmo para buscar os termos
+}
