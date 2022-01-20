@@ -48,3 +48,7 @@ Database::Database(string arquivo){
         exit(0);
     }
 }
+
+vector<pair<unsigned int, string>> Database::getDados(){
+    return this -> data_dados;
+}
