@@ -23,6 +23,12 @@ class Database{
         *   @param string contendo o nome do arquivo passado por linha de comando
         */
         Database(std::string arquivo);
+
+        /**
+        * Método para retornar o vector de dados
+        * @return vector com par de dados
+        */
+        std::vector<std::pair<unsigned int, std::string>>getDados();
 };
 
 #endif
