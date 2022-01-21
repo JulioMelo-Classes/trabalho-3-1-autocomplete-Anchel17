@@ -17,6 +17,8 @@ class Database{
         std::vector<std::pair<unsigned int, std::string>> data_dados;            //<!Dados tratados do arquivo
 
     public:
+        //SÓ PRA VER SE TA ORDENANDO
+        void teste();
 
         /**
         *   Método construtor da classe banco de dados
