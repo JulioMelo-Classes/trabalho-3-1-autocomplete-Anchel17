@@ -6,6 +6,13 @@
 
 using namespace std;
 
+void Database::teste(){
+    for(int i = 0; i < 10; i++){
+        cout<<data_dados[i].first<<" ";
+        cout<<data_dados[i].second<<endl;
+    }
+}
+
 Database::Database(string arquivo){
     ifstream arq;
     string l_string;                        //<!Variável para pegar os termos 
@@ -29,6 +36,11 @@ Database::Database(string arquivo){
             //Assim, fica separado a ocorrência e o termo
             size_t pos = data_dadosBrutos[i].find("\t");
             l_str2 = data_dadosBrutos[i].substr(pos);
+            
+            //função lambda para deixar tudo com lowercase
+            transform(l_str2.begin(), l_str2.end(), l_str2.begin(),
+            [](char c){return tolower(c);});
+
             data_dados.push_back({stoul(data_dadosBrutos[i]), l_str2});
         }
         
@@ -48,6 +60,8 @@ Database::Database(string arquivo){
         exit(0);
     }
 }
+
+//CRIAR AQUI O ALGORITMO PARA ORDENAR OS TERMOS POR ORDEM ALFABÉTICA
 
 vector<pair<unsigned int, string>> Database::getDados(){
     return this -> data_dados;
