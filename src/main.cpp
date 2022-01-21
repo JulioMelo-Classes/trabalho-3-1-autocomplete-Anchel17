@@ -16,7 +16,12 @@ int main(int argc, char* argv[]){
 
     while(true){
         l_menu.recebeEntrada();
+
         l_p.busca(dado.getDados(), l_menu.getEntrada());
+
+        l_p.teste();
+
+        l_p.limpa();
     }
     return 0;
 }
