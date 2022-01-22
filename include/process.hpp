@@ -14,7 +14,22 @@ class Process{
 
     public:
 
-    void teste();
+        /**
+        *   Método para imprimir o resultadoda busca por ordem de frequência
+        */
+        void imprime();
+
+        /**
+        *   método que faz a troca entre elementos a serem ordenados
+        *   @param unsigned int x e y são as posições a serem trocadas entre si
+        */
+        void troca(unsigned int x, unsigned int y);
+
+        /**
+        *   Método responsável por ordenar os resultados
+        *   O algoritmo utilizado foi o de ordenação por seleção
+        */
+        void ordena();
 
 
         /**
