@@ -37,7 +37,7 @@ Database::Database(string arquivo){
             data_dados.push_back({stoul(data_dadosBrutos[i]), l_str2});
         }
 
-        teste();
+        //teste();
     }
     else{
         /*
