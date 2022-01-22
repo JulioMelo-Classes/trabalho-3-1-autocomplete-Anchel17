@@ -13,6 +13,7 @@ void Process::imprime(){
     }
     
     for(int i = 0; i < proc_result.size(); i++){
+	//só deixei o first para verificar se está ordenando corretamente, na versão final vou tirar
         cout<<proc_result[i].first<<" ";
         cout<<proc_result[i].second<<endl;
     }
