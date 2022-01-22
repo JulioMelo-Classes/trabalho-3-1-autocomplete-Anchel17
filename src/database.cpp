@@ -21,34 +21,23 @@ Database::Database(string arquivo){
     arq.open(arquivo, ios::in);
 
     if(arq.is_open()){
-        /*TA APAGANDO TODOS OS ESPAÇOS EM BRANCO, ASSIM ELE FUNCIONA*/
         while(getline(arq, l_string)){
-            while(l_string.find_first_of("' '\n") != string::npos){
-                size_t start = l_string.find_first_of("' '\n");    
-                l_string.erase(l_string.begin() + start);
-            }
             data_dadosBrutos.push_back(l_string);
         }
 
-        //ISSO AQUI SÓ TÁ FUNCIONANDO PQ AS PALAVRAS N TEM ESPAÇO.
-        for(int i = 1; i <= stoi(data_dadosBrutos[0]); i += 2){
-            //Acha onde existe tabulação e cria uma substring a partir dessa tabulação
-            //Assim, fica separado a ocorrência e o termo
-            size_t pos = data_dadosBrutos[i].find("\t");
-            l_str2 = data_dadosBrutos[i].substr(pos);
-            
+        for(int i = 1; i <= stoi(data_dadosBrutos[0]); i ++){
+            size_t pos = data_dadosBrutos[i].find_first_not_of("1 2 3 4 5 6 7 8 9 0");      //procura o primeiro caractere a não ser número
+            l_str2 = data_dadosBrutos[i].substr(pos);                  //faz uma substring a partir da primeira posição a não ser um número
+            data_dadosBrutos[i].erase(data_dadosBrutos[i].begin() + pos);           //apaga o conteúdo da string a partir da posição que não é número
+    
             //função lambda para deixar tudo com lowercase
             transform(l_str2.begin(), l_str2.end(), l_str2.begin(),
             [](char c){return tolower(c);});
 
             data_dados.push_back({stoul(data_dadosBrutos[i]), l_str2});
         }
-        
-        /*só para verificar se está armazenando corretamente
-        for(auto it : data_dados){
-            cout<<it.first<<" ";
-            cout<<it.second<<endl;
-        }*/
+
+        teste();
     }
     else{
         /*
