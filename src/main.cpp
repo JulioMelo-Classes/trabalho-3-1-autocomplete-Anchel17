@@ -19,7 +19,8 @@ int main(int argc, char* argv[]){
 
         l_p.busca(dado.getDados(), l_menu.getEntrada());
 
-        l_p.teste();
+        l_menu.imprimeResult();
+        l_p.imprime();
 
         l_p.limpa();
     }
