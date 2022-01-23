@@ -27,7 +27,7 @@ class Process{
 
         /**
         *   Método responsável por ordenar os resultados
-        *   O algoritmo utilizado foi o de ordenação por seleção
+        *   O algoritmo utilizado foi o de ordenação por inserção
         */
         void ordena();
 
