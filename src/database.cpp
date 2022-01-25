@@ -6,22 +6,22 @@
 
 using namespace std;
 
-void Database::teste(){
+/*void Database::teste(){
     for(int i = 0; i < 10; i++){
         cout<<data_dados[i].first<<" ";
         cout<<data_dados[i].second<<endl;
     }
-}
+}*/
 
 Database::Database(string arquivo){
-    ifstream arq;
+    ifstream l_arq;
     string l_string;                        //<!Variável para pegar os termos 
     string l_str2;                          //<!Variável para guardar a segunda metade da string
 
-    arq.open(arquivo, ios::in);
+    l_arq.open(arquivo, ios::in);
 
-    if(arq.is_open()){
-        while(getline(arq, l_string)){
+    if(l_arq.is_open()){
+        while(getline(l_arq, l_string)){
             data_dadosBrutos.push_back(l_string);
         }
 
@@ -38,6 +38,7 @@ Database::Database(string arquivo){
         }
 
         //teste();
+        l_arq.close();
     }
     else{
         /*
@@ -49,8 +50,6 @@ Database::Database(string arquivo){
         exit(0);
     }
 }
-
-//CRIAR AQUI O ALGORITMO PARA ORDENAR OS TERMOS POR ORDEM ALFABÉTICA
 
 vector<pair<unsigned int, string>> Database::getDados(){
     return this -> data_dados;
