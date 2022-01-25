@@ -21,11 +21,12 @@ Database::Database(string arquivo){
     arq.open(arquivo, ios::in);
 
     if(arq.is_open()){
-        while(getline(arq, l_string)){
+        while(getline(arq, l_string)){ //se vc vai fazer assim, melhor não ler a primeira string e apenas usar o size deste vetor!
             data_dadosBrutos.push_back(l_string);
         }
 
-        for(int i = 1; i <= stoi(data_dadosBrutos[0]); i ++){
+        for(int i = 1; i <= stoi(data_dadosBrutos[0]); i ++){ //se não lesse a primeira string apenas dadosBrutos.size() era suficiente, vc até pode usar dadosBrutos.size()-1
+            /*aqui vc poderia usar um stringstream, assim os dados das cidades também funcionariam se iniciasse com número*/
             size_t pos = data_dadosBrutos[i].find_first_not_of("1 2 3 4 5 6 7 8 9 0");      //procura o primeiro caractere a não ser número
             l_str2 = data_dadosBrutos[i].substr(pos);                  //faz uma substring a partir da primeira posição a não ser um número
             data_dadosBrutos[i].erase(data_dadosBrutos[i].begin() + pos);           //apaga o conteúdo da string a partir da posição que não é número
