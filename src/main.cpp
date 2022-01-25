@@ -12,17 +12,14 @@ int main(int argc, char* argv[]){
     Database dado(argv[1]);
 
     Interface l_menu;
-    Process l_p;
+    Process l_processa;
 
     while(true){
         l_menu.recebeEntrada();
 
-        l_p.busca(dado.getDados(), l_menu.getEntrada());
+        l_processa.busca(dado.getDados(), l_menu.getEntrada());
 
-        l_menu.imprimeResult();
-        l_p.imprime();
-
-        l_p.limpa();
+        l_processa.limpa();
     }
     return 0;
 }
