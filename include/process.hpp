@@ -1,8 +1,11 @@
 #ifndef PROCESS_HPP
 #define PROCESS_HPP
 
+#include "../include/interface.hpp"
+
 #include <vector>
 #include <iostream>
+
 /**
  * Classe responsável por processar o resultado da busca
  * do autocomplete e devolver os termos já ordenados para
@@ -12,12 +15,9 @@ class Process{
     private:
         std::vector<std::pair<unsigned int, std::string>>proc_result;             //<!O Vector resultante da busca
 
+        Interface proc_Interface;                   //<!Objeto para chamar a função de imprimir os resultados
+        
     public:
-
-        /**
-        *   Método para imprimir o resultadoda busca por ordem de frequência
-        */
-        void imprime();
 
         /**
         *   método que faz a troca entre elementos a serem ordenados
@@ -27,7 +27,7 @@ class Process{
 
         /**
         *   Método responsável por ordenar os resultados
-        *   O algoritmo utilizado foi o de ordenação por inserção
+        *   O algoritmo utilizado foi o de ordenação por seleção
         */
         void ordena();
 
