@@ -7,19 +7,6 @@
 
 using namespace std;
 
-void Process::imprime(){
-    if(proc_result.empty()){
-        cout<<"Sem resultados..."<<endl;
-    }
-    
-    for(int i = 0; i < proc_result.size(); i++){
-	//só deixei o first para verificar se está ordenando corretamente, na versão final vou tirar
-        cout<<proc_result[i].first<<" ";
-        cout<<proc_result[i].second<<endl;
-    }
-    cout<<"\n\n";
-}
-
 void Process::troca(unsigned int x, unsigned int y){
     pair<unsigned int, string> l_tmp = proc_result[x];
 	proc_result[x] = proc_result[y];
@@ -61,6 +48,7 @@ void Process::busca(vector<pair<unsigned int, string>> dados, string termo){
     }
 
     ordena();
+    proc_Interface.imprimeResult(proc_result);
 }
 
 void Process::limpa(){
