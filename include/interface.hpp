@@ -1,7 +1,9 @@
 #ifndef INTERFACE_HPP
 #define INTERFACE_HPP
 
-#include "../include/process.hpp"
+#include <vector>
+#include <string>
+
 /**
  * Classe responsável pela interação com o usuário
  * Vai imprimir as mensagens, receber a entrada e 
@@ -12,18 +14,18 @@ class Interface{
 
         std::string interf_entrada;                  //<!Entrada recebida do usuário
 
-        Process interf_imp;                             //<!Objeto para chamar o vector de termos possíveis
-
     public:
         /**
         *   Método para receber a entrada
         */
         void recebeEntrada();
         
+        
         /**
         *   Método para imprimir o vetor resultado
+        *   @param vector referências ao vector a ser impresso
         */
-        void imprimeResult();
+        void imprimeResult(std::vector<std::pair<unsigned int, std::string>>& interf_Dados);
 
         /**
         *   Método para retornar a entrada
