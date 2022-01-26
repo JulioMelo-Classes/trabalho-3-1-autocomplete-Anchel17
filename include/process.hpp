@@ -13,7 +13,7 @@
  */
 class Process{
     private:
-        std::vector<std::pair<unsigned int, std::string>>proc_result;             //<!O Vector resultante da busca
+        std::vector<std::pair<std::string, unsigned int>>proc_result;             //<!O Vector resultante da busca
 
         Interface proc_Interface;                   //<!Objeto para chamar a função de imprimir os resultados
         
@@ -45,7 +45,7 @@ class Process{
         *   @param vector com referências aos dados
         *   @param string termo a ser procurado
         */
-        void busca(std::vector<std::pair<unsigned int, std::string>> dados, std::string termo);
+        void busca(std::vector<std::pair<std::string, unsigned int>> dados, std::string termo);
 
         /**
         *   Método para apenas limparo vector de resultados
