@@ -25,7 +25,7 @@ class Interface{
         *   Método para imprimir o vetor resultado
         *   @param vector referências ao vector a ser impresso
         */
-        void imprimeResult(std::vector<std::pair<unsigned int, std::string>>& interf_Dados);
+        void imprimeResult(std::vector<std::pair<std::string, unsigned int>>& interf_Dados);
 
         /**
         *   Método para retornar a entrada
