@@ -8,7 +8,7 @@
 using namespace std;
 
 void Process::troca(unsigned int x, unsigned int y){
-    pair<unsigned int, string> l_tmp = proc_result[x];
+    pair<string, unsigned int> l_tmp = proc_result[x];
 	proc_result[x] = proc_result[y];
 	proc_result[y] = l_tmp;
 }
@@ -16,7 +16,7 @@ void Process::troca(unsigned int x, unsigned int y){
 void Process::ordena(){
 	for(int i = proc_result.size()-1; i >= 0; i--){
 		for(int j = i; j < proc_result.size()-1; j++){
-			if(proc_result[j].first < proc_result[j + 1].first){
+			if(proc_result[j].second < proc_result[j + 1].second){
 				troca(j, j+1);
 			}
 			else{
@@ -27,23 +27,23 @@ void Process::ordena(){
 }
 
 void Process::achouArmazena(unsigned int &ocorr, string &termo){
-    this -> proc_result.push_back({ocorr, termo});
+    this -> proc_result.push_back({termo, ocorr});
 }
 
-void Process::busca(vector<pair<unsigned int, string>> dados, string termo){
+void Process::busca(vector<pair<string, unsigned int>> dados, string termo){
     //função lambda para deixar tudo com lowercase
     transform(termo.begin(), termo.end(), termo.begin(),
     [](char c){return tolower(c);});
 
     for(int i = 0; i < dados.size(); i++){
-        while(dados[i].second.find_first_of("\t") != string::npos){
-            size_t start = dados[i].second.find_first_of("\t");    ///tirar tabulação
-            dados[i].second.erase(dados[i].second.begin() + start);
+        while(dados[i].first.find_first_of("\t") != string::npos){
+            size_t start = dados[i].first.find_first_of("\t");    ///tirar tabulação
+            dados[i].first.erase(dados[i].first.begin() + start);
         }
         
-        auto prefix = mismatch(termo.begin(), termo.end(), dados[i].second.begin());
+        auto prefix = mismatch(termo.begin(), termo.end(), dados[i].first.begin());
         if(prefix.first == termo.end()){
-            achouArmazena(dados[i].first, dados[i].second);
+            achouArmazena(dados[i].second, dados[i].first);
         }
     }
 
