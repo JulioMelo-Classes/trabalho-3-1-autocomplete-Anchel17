@@ -19,14 +19,14 @@ void Interface::recebeEntrada(){
     cout<<">>> Resultados para \""<<interf_entrada<<"\":"<<endl;
 }
 
-void Interface::imprimeResult(vector<pair<unsigned int, string>>& interf_Dados){
+void Interface::imprimeResult(vector<pair<string, unsigned int>>& interf_Dados){
     if(interf_Dados.empty()){
         cout<<"Sem resultados..."<<endl;
     }
     
     for(int i = 0; i < interf_Dados.size(); i++){
-        cout<<interf_Dados[i].first<<" ";
-        cout<<interf_Dados[i].second<<endl;
+        cout<<interf_Dados[i].second<<" ";
+        cout<<interf_Dados[i].first<<endl;
     }
     cout<<"\n\n\n";
 }
