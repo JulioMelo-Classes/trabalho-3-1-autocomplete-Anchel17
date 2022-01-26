@@ -6,12 +6,12 @@
 
 using namespace std;
 
-/*void Database::teste(){
-    for(int i = 0; i < 10; i++){
+void Database::teste(){
+    for(int i = 0; i < data_dados.size(); i++){
         cout<<data_dados[i].first<<" ";
         cout<<data_dados[i].second<<endl;
     }
-}*/
+}
 
 Database::Database(string arquivo){
     ifstream l_arq;
@@ -34,8 +34,10 @@ Database::Database(string arquivo){
             transform(l_str2.begin(), l_str2.end(), l_str2.begin(),
             [](char c){return tolower(c);});
 
-            data_dados.push_back({stoul(data_dadosBrutos[i]), l_str2});
+            data_dados.push_back({l_str2, stoul(data_dadosBrutos[i])});
         }
+
+        sort(data_dados.begin(), data_dados.end());
 
         //teste();
         l_arq.close();
@@ -51,6 +53,6 @@ Database::Database(string arquivo){
     }
 }
 
-vector<pair<unsigned int, string>> Database::getDados(){
+vector<pair<string, unsigned int>> Database::getDados(){
     return this -> data_dados;
 }
