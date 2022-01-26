@@ -14,7 +14,7 @@ class Database{
 
         std::vector<std::string> data_dadosBrutos;                               //<<!Dados brutos do arquivo
         
-        std::vector<std::pair<unsigned int, std::string>> data_dados;            //<!Dados tratados do arquivo
+        std::vector<std::pair<std::string, unsigned int>> data_dados;            //<!Dados tratados do arquivo
 
     public:
         //SÓ PRA VER SE TA ORDENANDO
@@ -30,7 +30,7 @@ class Database{
         * Método para retornar o vector de dados
         * @return vector com par de dados
         */
-        std::vector<std::pair<unsigned int, std::string>>getDados();
+        std::vector<std::pair<std::string, unsigned int>>getDados();
 };
 
 #endif
