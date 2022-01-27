@@ -2,7 +2,6 @@
 #include <string>
 
 #include "../include/interface.hpp"
-#include "../include/process.hpp"
 
 using namespace std;
 
@@ -29,6 +28,8 @@ void Interface::imprimeResult(vector<pair<string, unsigned int>>& interf_Dados){
         cout<<interf_Dados[i].first<<endl;
     }
     cout<<"\n\n\n";
+
+    interf_Dados.clear();
 }
 
 string Interface::getEntrada(){
