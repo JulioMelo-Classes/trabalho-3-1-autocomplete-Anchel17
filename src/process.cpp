@@ -24,31 +24,11 @@ void Process::ordena(){
 			}
 		}
 	}
+    proc_Interface.imprimeResult(proc_result);
 }
 
 void Process::achouArmazena(unsigned int &ocorr, string &termo){
     this -> proc_result.push_back({termo, ocorr});
-}
-
-void Process::busca(vector<pair<string, unsigned int>> dados, string termo){
-    //função lambda para deixar tudo com lowercase
-    transform(termo.begin(), termo.end(), termo.begin(),
-    [](char c){return tolower(c);});
-
-    for(int i = 0; i < dados.size(); i++){
-        while(dados[i].first.find_first_of("\t") != string::npos){
-            size_t start = dados[i].first.find_first_of("\t");    ///tirar tabulação
-            dados[i].first.erase(dados[i].first.begin() + start);
-        }
-        
-        auto prefix = mismatch(termo.begin(), termo.end(), dados[i].first.begin());
-        if(prefix.first == termo.end()){
-            achouArmazena(dados[i].second, dados[i].first);
-        }
-    }
-
-    ordena();
-    proc_Interface.imprimeResult(proc_result);
 }
 
 void Process::limpa(){
