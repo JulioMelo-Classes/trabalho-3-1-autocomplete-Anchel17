@@ -31,7 +31,6 @@ class Process{
         */
         void ordena();
 
-
         /**
         *   Método que vai armazenar no vector caso sejam encontrados termos
         *   compatíveis com a entrada
@@ -39,13 +38,6 @@ class Process{
         *   @param int contendo a ocorrência do termo
         */
         void achouArmazena(unsigned int &ocorr, std::string &termo);
-
-        /**
-        *   Método para buscar um termo no vector de dados
-        *   @param vector com referências aos dados
-        *   @param string termo a ser procurado
-        */
-        void busca(std::vector<std::pair<std::string, unsigned int>> dados, std::string termo);
 
         /**
         *   Método para apenas limparo vector de resultados
