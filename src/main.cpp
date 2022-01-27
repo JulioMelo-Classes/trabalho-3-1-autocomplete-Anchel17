@@ -17,9 +17,7 @@ int main(int argc, char* argv[]){
     while(true){
         l_menu.recebeEntrada();
 
-        l_processa.busca(dado.getDados(), l_menu.getEntrada());
-
-        l_processa.limpa();
+        dado.busca(l_menu.getEntrada());
     }
     return 0;
 }
