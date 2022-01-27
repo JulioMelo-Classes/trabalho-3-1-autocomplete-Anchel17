@@ -53,6 +53,27 @@ Database::Database(string arquivo){
     }
 }
 
+void Database::busca(string termo){
+    //função lambda para deixar tudo com lowercase
+    transform(termo.begin(), termo.end(), termo.begin(),
+    [](char c){return tolower(c);});
+
+    for(int i = 0; i < data_dados.size(); i++){
+        while(data_dados[i].first.find_first_of("\t") != string::npos){
+            size_t start = data_dados[i].first.find_first_of("\t");    ///tirar tabulação
+            data_dados[i].first.erase(data_dados[i].first.begin() + start);
+        }
+        
+        auto prefix = mismatch(termo.begin(), termo.end(), data_dados[i].first.begin());
+        if(prefix.first == termo.end()){
+            proc_final.achouArmazena(data_dados[i].second, data_dados[i].first);
+        }
+    }
+
+    proc_final.ordena();
+}
+
+
 vector<pair<string, unsigned int>> Database::getDados(){
     return this -> data_dados;
 }
