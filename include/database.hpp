@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+#include "../include/process.hpp"
+
 /**
  * Classe responsável por processar e armazenar os dados
  */
@@ -16,6 +18,8 @@ class Database{
         
         std::vector<std::pair<std::string, unsigned int>> data_dados;            //<!Dados tratados do arquivo
 
+        Process proc_final;                           //<!Objeto para receber os resultados da busca
+
     public:
         //SÓ PRA VER SE TA ORDENANDO
         void teste();
@@ -25,6 +29,12 @@ class Database{
         *   @param string contendo o nome do arquivo passado por linha de comando
         */
         Database(std::string arquivo);
+
+        /**
+        *   Método para buscar um termo no vector de dados
+        *   @param string termo a ser procurado
+        */
+        void busca(std::string termo);
 
         /**
         * Método para retornar o vector de dados
