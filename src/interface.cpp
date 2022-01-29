@@ -24,7 +24,6 @@ void Interface::imprimeResult(vector<pair<string, unsigned int>>& interf_Dados){
     }
     
     for(int i = 0; i < interf_Dados.size(); i++){
-        cout<<interf_Dados[i].second<<" ";
         cout<<interf_Dados[i].first<<endl;
     }
     cout<<"\n\n\n";
