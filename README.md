@@ -27,3 +27,9 @@ cd build
 ```
 ./autocomplete ../data/cities.txt
 ```
+
+- Para testar a ordenação por peso, execute o programa com o arquivo "desord.txt" ou um arquivo de sua preferência:
+
+```
+./autocomplete ../data/desord.txt
+```
