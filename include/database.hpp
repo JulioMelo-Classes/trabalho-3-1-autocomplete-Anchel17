@@ -5,6 +5,7 @@
 #include <string>
 
 #include "../include/process.hpp"
+#include "../include/interface.hpp"
 
 /**
  * Classe responsável por processar e armazenar os dados
@@ -19,6 +20,8 @@ class Database{
         std::vector<std::pair<std::string, unsigned int>> data_dados;            //<!Dados tratados do arquivo
 
         Process proc_final;                           //<!Objeto para receber os resultados da busca
+
+        Interface iterf_erro;                         //<!Objeto para chamar a função que imprime erro ao falhar em abrir um arquivo
 
     public:
 
