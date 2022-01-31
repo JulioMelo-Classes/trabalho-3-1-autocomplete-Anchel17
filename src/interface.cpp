@@ -31,6 +31,12 @@ void Interface::imprimeResult(vector<pair<string, unsigned int>>& interf_Dados){
     interf_Dados.clear();
 }
 
+void Interface::imprimeErro(){
+    cout<<">>>Erro! Verifique se digitou corretamente o nome e diretório do arquivo para leitura\n"<<endl;
+    cout<<"   Para utilizar o programa corretamente, digite: "<<endl;
+    cout<<"   ./autocomplete ../data/nome_do_arquivo.txt\n\n"<<endl;
+}
+
 string Interface::getEntrada(){
     return this -> interf_entrada;
 }
