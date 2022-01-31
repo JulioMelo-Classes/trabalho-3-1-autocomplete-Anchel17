@@ -35,12 +35,8 @@ Database::Database(string arquivo){
         l_arq.close();
     }
     else{
-        /*
-        TALVEZ TRANSFORME ISSO EM UM MÉTODO PARA IMPRIMIR ESSA MENSAGEM
-        NA CLASSE INTERFACE
-        */
-        cout<<"Erro! Verifique se digitou corretamente o destino do arquivo para leitura"<<endl;
-
+        iterf_erro.imprimeErro();
+        
         exit(0);
     }
 }
