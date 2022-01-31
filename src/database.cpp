@@ -1,5 +1,4 @@
 #include "../include/database.hpp"
-#include <iostream>
 #include <string>
 #include <algorithm>
 #include <fstream>
