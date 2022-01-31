@@ -28,6 +28,12 @@ class Interface{
         void imprimeResult(std::vector<std::pair<std::string, unsigned int>>& interf_Dados);
 
         /**
+        *   Método para imprimir uma mensagem de erro
+        *   quando um arquivo não for aberto
+        */
+        void imprimeErro();
+
+        /**
         *   Método para retornar a entrada
         *   @return string contendo a entrada digitada
         */
