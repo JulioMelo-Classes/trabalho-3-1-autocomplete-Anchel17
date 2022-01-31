@@ -21,8 +21,6 @@ class Database{
         Process proc_final;                           //<!Objeto para receber os resultados da busca
 
     public:
-        //SÓ PRA VER SE TA ORDENANDO
-        void teste();
 
         /**
         *   Método construtor da classe banco de dados
