@@ -6,13 +6,6 @@
 
 using namespace std;
 
-void Database::teste(){
-    for(int i = 0; i < data_dados.size(); i++){
-        cout<<data_dados[i].first<<" ";
-        cout<<data_dados[i].second<<endl;
-    }
-}
-
 Database::Database(string arquivo){
     ifstream l_arq;
     string l_string;                        //<!Variável para pegar os termos 
@@ -39,7 +32,6 @@ Database::Database(string arquivo){
 
         sort(data_dados.begin(), data_dados.end());
 
-        //teste();
         l_arq.close();
     }
     else{
