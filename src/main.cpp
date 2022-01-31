@@ -18,6 +18,8 @@ int main(int argc, char* argv[]){
         l_menu.recebeEntrada();
 
         dado.busca(l_menu.getEntrada());
+
+        l_processa.limpa();
     }
     return 0;
 }
